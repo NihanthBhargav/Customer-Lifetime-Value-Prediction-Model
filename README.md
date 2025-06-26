@@ -1,73 +1,60 @@
-🧮 Customer Lifetime Value (LTV) Prediction
-📌 Objective
-This project aims to predict the Lifetime Value (LTV) of customers based on historical purchase data. Accurate LTV predictions enable better customer segmentation and targeted marketing strategies.
+# 🧮 Customer Lifetime Value (LTV) Prediction
 
-🛠 Tools & Libraries
-Python (pandas, numpy, sklearn, xgboost, matplotlib, seaborn)
+## 📌 Objective
+Predict the Lifetime Value (LTV) of customers using historical purchase data.  
+This helps in customer segmentation and enables targeted marketing strategies.
 
-Excel (for initial data exploration)
+---
 
-Jupyter Notebook (program.ipynb)
+## 🛠 Tools & Libraries
+- **Python**: `pandas`, `numpy`, `sklearn`, `xgboost`, `matplotlib`, `seaborn`
+- **Excel**: Initial data exploration
+- **Jupyter Notebook**: `program.ipynb`
 
-📂 Dataset
-customers.csv: Customer ID and demographic info
+---
 
-transactions.csv: Purchase history including date and order value
+## 📂 Dataset
+- `customers.csv`: Customer ID and demographic information
+- `transactions.csv`: Purchase history including date and order value
 
-🔄 Process Overview
-1. Data Preprocessing
-Merged customers.csv and transactions.csv using CustomerID
+---
 
-Removed nulls, duplicates, and ensured date formatting
+## 🔄 Workflow
 
-2. Feature Engineering
-Frequency: Number of purchases per customer
+### 🔹 1. Data Preprocessing
+- Merged `customers.csv` and `transactions.csv`
+- Cleaned nulls and duplicates
+- Formatted date fields properly
 
-Recency: Days since last purchase
+### 🔹 2. Feature Engineering
+- **Frequency**: Number of purchases per customer  
+- **Recency**: Days since the last purchase  
+- **AOV**: Average Order Value per customer
 
-Average Order Value (AOV): Mean order value per customer
+### 🔹 3. Modeling
+- Used **XGBoost Regressor** for LTV prediction
+- Evaluation Metrics:
+  - Mean Absolute Error (MAE)
+  - Root Mean Squared Error (RMSE)
 
-3. Modeling
-Trained XGBoost Regressor for LTV prediction
+### 🔹 4. Customer Segmentation
+Based on predicted LTV:
+- High Value
+- Medium Value
+- Low Value
 
-Evaluated using:
+---
 
-Mean Absolute Error (MAE)
+## 📊 Visualizations
+- `ltv_distribution.png`: Distribution of predicted LTVs  
+- Additional plots are included in `program.ipynb`
 
-Root Mean Squared Error (RMSE)
+---
 
-4. Segmentation
-Classified customers into segments based on predicted LTV (e.g., High, Medium, Low)
+## 📦 Deliverables
+- `program.ipynb`: Full code with explanations and outputs  
+- `ltv_distribution.png`: LTV prediction visualization  
+- `ltv_predictions.csv`: Final predicted LTV values  
+- `model.pkl`: Trained XGBoost model (optional)
 
-📊 Visualization
-Included ltv_distribution.png for LTV prediction distribution
-
-Other visual insights available in the Jupyter notebook
-
-📦 Deliverables
-program.ipynb: Full code with explanations and outputs
-
-ltv_distribution.png: Visual of predicted LTVs
-
-ltv_predictions.csv: Final LTV predictions per customer
-
-Trained XGBoost model (optional .pkl file)
-
-🚀 Getting Started
-Clone repo
-
-Install dependencies
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run program.ipynb step-by-step
-
-Review ltv_predictions.csv for output
-
-📈 Sample Output
-| CustomerID | Predicted_LTV |
-| ---------- | -------------- |
-| 10234      | 1345.78        |
-| 10235      | 456.23         |
+---
